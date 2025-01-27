@@ -11,6 +11,15 @@ app = FastAPI(title="Simple Chatbot API")
 class Message(BaseModel):
     content: str
 
+# Azure OpenAI client initialization
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_KEY"),
+    api_version="2024-08-01-preview",
+    azure_endpoint="https://gu-training-llm.openai.azure.com/"
+)
+
+# Store conversation history in memory
+conversation_history: List[dict] = []
 
 # Mock functions
 def get_temperature(room: str) -> float:

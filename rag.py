@@ -16,7 +16,7 @@ collection_name = "training"
 client = AzureOpenAI(
     api_key=os.getenv("AZURE_OPENAI_KEY"),
     api_version="2024-08-01-preview",
-    azure_endpoint="https://gu-llm-training.openai.azure.com/"
+    azure_endpoint="https://gu-training-llm.openai.azure.com/"
 )
 
 # Store conversation history in memory
